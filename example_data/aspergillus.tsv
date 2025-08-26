@@ -1,0 +1,11 @@
+Locus	Description	Name	Sequence	OligoType	Reference
+ITS	Internal transcribed spacer region of the nrDNA	ITS5	GGAAGTAAAAGTCGTAACAAGG	F	White et al. (1990)
+ITS	Internal transcribed spacer region of the nrDNA	ITS4	TCCTCCGCTTATTGATATGC	R	White et al. (1990)
+LSU	28S large subunit of the nrDNA	LR0R	ACCCGCTGAACTTAAGC	F	https://doi.org/10.1073/pnas.91.10.4599
+LSU	28S large subunit of the nrDNA	LR5	ATCCTGAGGGAAACTTC	R	https://doi.org/10.1128/jb.172.8.4238-4246.1990
+BenA	Beta-tubulin	bt2a	TTCCCCCGTCTCCACTTCTTCATG	F	https://doi.org/10.1128/aem.61.4.1323-1330.1995
+BenA	Beta-tubulin	bt2b	GACGAGATCGTTCATGTTGAACTC	R	https://doi.org/10.1128/aem.61.4.1323-1330.1995
+CaM	Calmodulin	cmd5	CCGAGTACAAGGAGGCCTTC	F	https://doi.org/10.1099/ijs.0.63980-0
+CaM	Calmodulin	cmd6	CCGATAGAGGTCATAACGTGG	R	https://doi.org/10.1099/ijs.0.63980-0
+rpb2	RNA polymerase second largest subunit	 fRPB2-5F	GAYGAYMGWGATCAYTTYGG	F	https://doi.org/10.1093/oxfordjournals.molbev.a026092
+rpb2	RNA polymerase second largest subunit	 fRPB2-7cR	CCCATRGCTTGYTTRCCCAT	R	https://doi.org/10.1093/oxfordjournals.molbev.a026092
