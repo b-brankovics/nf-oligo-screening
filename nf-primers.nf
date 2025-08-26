@@ -3,10 +3,10 @@
 /*
  * pipeline input parameters
  */
-params.csv = "example_data/primers.tsv"
-params.yaml = "example_data/fus.yaml"
-params.target = "example_data/Fo_F11_regions.fas"
-params.outdir = "nf-results"
+params.csv = "$projectDir/example_data/primers.tsv"
+params.yaml = "$projectDir/example_data/fus.yaml"
+params.target = "$projectDir/example_data/Fo_F11_regions.fas"
+params.out = "nf-results"
 
 process MAPPRIMERS {    
     publishDir params.outdir, mode: 'copy', pattern: "primers.fas"
