@@ -6,10 +6,11 @@
 params.csv = "$projectDir/example_data/primers.tsv"
 params.yaml = "$projectDir/example_data/fus.yaml"
 params.target = "$projectDir/example_data/Fo_F11_regions.fas"
+
 params.out = "nf-results"
 
 process MAPPRIMERS {    
-    publishDir params.outdir, mode: 'copy', pattern: "primers.fas"
+    publishDir params.out, mode: 'copy', pattern: "primers.fas"
     
     input:
     path csv
@@ -29,7 +30,7 @@ process MAPPRIMERS {
 }
 
 process IUPACSAM {    
-    publishDir params.outdir, mode: 'copy', pattern: "iupac.sam"
+    publishDir params.out, mode: 'copy', pattern: "iupac.sam"
 
     input:
     path lastal
@@ -45,7 +46,7 @@ process IUPACSAM {
 }
 
 process PARSEPRIMERS {
-    publishDir params.outdir, mode: 'copy', pattern: "result.tsv"
+    publishDir params.out, mode: 'copy', pattern: "result.tsv"
 
     input:
     path sam
@@ -62,7 +63,7 @@ process PARSEPRIMERS {
 
 
 process EXTRACTAMPLICONS {
-    publishDir params.outdir, mode: 'copy', pattern: 'amplicons.fas'
+    publishDir params.out, mode: 'copy', pattern: 'amplicons.fas'
     
     input:
     path target
