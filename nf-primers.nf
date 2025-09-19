@@ -9,6 +9,22 @@ params.target = "$projectDir/example_data/Fo_F11_regions.fas"
 
 params.out = "nf-results"
 
+// Adding log file
+def runLog = file(params.out + "/run.log")
+// start log
+runLog.text = "=== Pipeline started: ${new Date()} ===\n"
+runLog << "Command line invocation: ${workflow.commandLine}\n"
+runLog << "Nextflow version: ${nextflow.version}\n"
+runLog << "Workflow file: ${workflow.scriptFile}\n"
+runLog << "Config file(s): ${workflow.configFiles}\n"
+runLog << "Launch directory: ${workflow.launchDir}\n"
+runLog << "Git repository: ${workflow.repository}\n"
+// runLog << "Output directory: ${workflow.outputDir}\n"
+runLog << "Profile(s): ${workflow.profile}\n"
+// params
+params.each { k, v -> runLog << "PARAM $k = $v\n" }
+
+
 process MAPPRIMERS {    
     publishDir params.out, mode: 'copy', pattern: "primers.fas"
     
@@ -84,4 +100,10 @@ workflow {
     iupac=IUPACSAM(last.sam, last.fasta)
     results=PARSEPRIMERS(iupac, Channel.fromPath(params.yaml))
     EXTRACTAMPLICONS(Channel.fromPath(params.target), results)
+}
+
+workflow.onComplete {
+    runLog << "=== Pipeline finished: ${new Date()} ===\n"
+    // runLog << "Pipeline completed at: $workflow.complete\n"
+    runLog << "Execution status: ${ workflow.success ? 'OK' : 'failed' }\n"
 }
